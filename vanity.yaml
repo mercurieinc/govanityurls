@@ -1,8 +1,50 @@
-host: rakyll.pizza
+host: pkg.mercurie.ng
 
 paths:
-  /portmidi:
-    repo: https://github.com/rakyll/portmidi
+  /ikeja:
+    repo: https://github.com/mercurieinc/ikeja
+    display: Adpay Mercurie package
+  
+  /govanityurls:
+    repo: https://github.com/mercurieinc/govanityurls
 
-  /launchpad:
-    repo: https://github.com/rakyll/launchpad
+  /ketu:
+    repo: https://github.com/mercurieinc/ketu
+    display: Mercurie payment package
+
+  /ago:
+    repo: https://github.com/mercurieinc/ago
+    display: Mercurie Order package
+
+  /ojota:
+    repo: https://github.com/mercurieinc/ojota
+    display: Mercurie business package
+
+  /ijegun:
+    repo: https://github.com/mercurieinc/ijegun
+    display: Mercurie user package
+
+  /ngosi:
+    repo: https://github.com/mercurieinc/ngosi
+    display: Mercurie notification package
+
+  /aba:
+    repo: https://github.com/mercurieinc/aba
+    display: Mercurie GWS package
+  
+  /fct:
+    repo: https://github.com/mercurieinc/fct
+    display: Mercurie utility package
+
+  /abokifx:
+    repo: https://github.com/mercurieinc/abokifx
+    display: Mercurie FX package
+  
+  /gbagada:
+    repo: https://github.com/mercurieinc/gbagada
+    display: Mercurie domain analysis package
+
+  /awoof:
+    repo: https://github.com/mercurieinc/awoof
+    display: Mercurie referral package
+

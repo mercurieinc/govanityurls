@@ -2,67 +2,49 @@
 
 Go Vanity URLs is a simple Go server that allows you
 to set custom import paths for your Go packages.
-It also can run on Google App Engine.
+It runs on Google Run Service.
 
 ## Quickstart
 
 Install and run the binary:
 
 ```
-$ go get -u github.com/GoogleCloudPlatform/govanityurls
-$ # update vanity.yaml
-$ govanityurls
-$ # open http://localhost:8080
+go get -u pkg.mercurie.ng/govanityurls
+# update vanity.yaml
+govanityurls
+# open http://localhost:8080
 ```
 
-
-### Google App Engine
-
-Install [gcloud](https://cloud.google.com/sdk/downloads) and install Go App Engine component:
-
-```
-$ gcloud components install app-engine-go
-```
-
-Setup a [custom domain](https://cloud.google.com/appengine/docs/standard/python/using-custom-domains-and-ssl) for your app.
 
 Get the application:
+
 ```
-git clone https://github.com/GoogleCloudPlatform/govanityurls
+git clone https://github.com/mercurieinc/govanityurls
 cd govanityurls
 ```
 
-Edit `vanity.yaml` to add any number of git repos. E.g., `customdomain.com/portmidi` will
-serve the [https://github.com/rakyll/portmidi](https://github.com/rakyll/portmidi) repo.
+Edit `vanity.yaml` to add any number of git repos. E.g., `pkg.mercurie.com/aba` will
+serve the [https://github.com/mercurieinc/aba](https://github.com/mercuriein/aba) repo.
 
 ```
 paths:
-  /portmidi:
-    repo: https://github.com/rakyll/portmidi
+  /aba:
+    repo: https://github.com/mercurieinc/aba
+
 ```
 
 You can add as many rules as you wish.
 
-Deploy the app:
+Deploy the app to cloud run:
 
 ```
-$ gcloud app deploy
+gcloud run deploy govanityurls --source . 
 ```
 
 That's it! You can use `go get` to get the package from your custom domain.
 
 ```
-$ go get customdomain.com/portmidi
-```
-
-### Running in other environments
-
-You can also deploy this as an App Engine Flexible app by changing the
-`app.yaml` file:
-
-```
-runtime: go
-env: flex
+go get pkg.mercurie.com/aba
 ```
 
 This project is a normal Go HTTP server, so you can also incorporate the
@@ -135,3 +117,22 @@ paths:
     </tr>
   </tbody>
 </table>
+
+
+## Git and GO PRIVATE updates
+To ensure git is able to correctly use https, update your gitconfig
+
+`git config --global --add url."<git@github.com>:".insteadOf "<https://github.com/>"`
+
+Since the repos are private, update your Go ENV
+
+```bash
+go env -w GOPRIVATE=pkg.mercurie.ng/*,pkg.mercurie.com/*,github.com/mercurieinc/* 
+```
+
+AND/OR update your `~/.zshrc` file
+
+
+```bash
+  export GOPRIVATE=pkg.mercurie.ng/*,pkg.mercurie.com/*,github.com/mercurieinc/* 
+```
