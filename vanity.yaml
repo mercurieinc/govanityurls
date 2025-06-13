@@ -48,3 +48,7 @@ paths:
     repo: https://github.com/mercurieinc/awoof
     display: Mercurie referral package
 
+  /mbughari:
+    repo: https://github.com/mercurieinc/mbughari
+    display: Mercurie Admin Utility package
+
