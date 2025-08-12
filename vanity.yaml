@@ -52,3 +52,6 @@ paths:
     repo: https://github.com/mercurieinc/mbughari
     display: Mercurie Admin Utility package
 
+  /kano:
+    repo: https://github.com/mercurieinc/kano
+    display: Mercurie Virtual Card and Account service
