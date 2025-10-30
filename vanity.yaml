@@ -26,7 +26,7 @@ paths:
 
   /ngosi:
     repo: https://github.com/mercurieinc/ngosi
-    display: Mercurie notification package
+    display: Mercurie notification service
 
   /aba:
     repo: https://github.com/mercurieinc/aba
@@ -55,3 +55,7 @@ paths:
   /kano:
     repo: https://github.com/mercurieinc/kano
     display: Mercurie Virtual Card and Account service
+
+  /ajah:
+    repo: https://github.com/mercurieinc/ajah
+    display: Mercurie PDF generation service 
